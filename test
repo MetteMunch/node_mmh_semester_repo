@@ -1,0 +1,15 @@
+console.log("Hej")
+
+//use const if possible
+//ellers let
+
+let name = "Mette";
+
+//String literal
+//dobbelt quotes""
+//single''
+//backticks ``  kan bruges til alt, hvori der kan anvendes andre quotes og variable, backticks kan have multiline
+
+console.log ("hello world", name);
+console.log(2)
+
