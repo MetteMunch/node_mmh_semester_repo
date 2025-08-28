@@ -1,0 +1,20 @@
+//datatyper javascript (8)
+
+//Number
+//BigInt
+//Boolean
+//String
+//Object
+//Symbol
+//undefined
+//NULL
+
+console.log(typeof []);
+
+//js object
+//javascript object (skal ikke quotation marks omkring key, som json har)
+const person = {
+    name: "Jens" // key-value pair
+};
+
+console.log(person);
