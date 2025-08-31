@@ -13,3 +13,6 @@ let name = "Mette";
 console.log ("hello world", name);
 console.log(2)
 
+
+//MDN er super dokumentation
+
