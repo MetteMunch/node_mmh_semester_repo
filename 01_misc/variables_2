@@ -1,0 +1,30 @@
+//"use strict"; //hvis denne er øverst i filen så finder den fejl, som ellers ville kunne køre
+
+//missing declaration
+totalGlobalVariabel = "Never do this";
+console.log(totalGlobalVariabel);
+
+//Hvorfor vi ikke bruger var, det har noget med scope
+
+//regel use const whenver possible otherwise use let
+
+const someType = 123;
+someType = 456;  //const
+console.log(someType)
+
+const notConstArr = [1]; //const arrays kan ændres
+const notConstObject = {}; //
+
+
+
+
+function someFunc() {
+    //function scope
+}
+
+//block scope
+var someVar = true;
+{
+    { var someVar = false;}
+    console.log(someVar)//Her er output false, da var er global
+}

@@ -1,0 +1,41 @@
+
+
+
+function getRandomInt(min, max) { //alm funktion
+    return Math.floor(Math.random() * (max + 1 - min) + min);
+}
+
+
+const whatIsThis = function (min, max) {  //anonym funktion
+    return Math.floor(Math.random() * (max + 1 - min) + min);
+}
+//tjek disse ud og kald dem
+const getRandomIntArrowFunktion = (min, max) => { //Arrow funktion
+    return Math.floor(Math.random() * (max + 1 - min) + min);
+}
+//action er callback funktion - tjek i stack overfloat - callback bliver sendt videre som et argument til en anden funktion og måske bliver den kørt
+function genericActionPerformer(name, action) {
+    return action(name)
+}
+
+function cookingAction(name) {
+    return `${name} enjoys cooking`;
+}
+
+console.log(genericActionPerformer("Jens", cookingAction)); //funktionsreference er uden () 
+
+//console.log(getRandomInt(5,10));
+
+function loveRunning(name) {
+    return `${name} loves to run!`;
+}
+
+const result = (name) => {
+    return `${name} loves to run!`;
+}
+
+console.log(genericActionPerformer("Marco", result));
+
+
+
+console.log(genericActionPerformer("Lucas",(name)=>`${name} likes to ask questions`));
