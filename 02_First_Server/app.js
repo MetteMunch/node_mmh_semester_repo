@@ -33,13 +33,19 @@ res.send({name: "venus"});
 //pathvariabel er et string for det er url
 
 app.get("/waterfalls/:likingScore", (req,res) => {
-    //console.log(req.params);
-    //const likingScore = req.params()
-
+    console.log(req.params);
     res.send({result: `You like waterfalls this much: ${req.params.likingScore}`
     });
 });
 
-
+/* task create a /bag route that can take two path variables 
+where the client can define what should go in it
+then respond with what the bag contains
+ */
+app.get("/bag/:item1/:item2", (req,res) => {
+    const { item1, item2} = req.params;
+    console.log(req.params);
+    res.send({result: `Your bag contains: ${item1} and ${item2}`}); //returnerer et JSON objekt
+});
 
 app.listen(8080); //hvorfor 8080 - er http developer port som standard
