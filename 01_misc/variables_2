@@ -4,19 +4,16 @@
 totalGlobalVariabel = "Never do this";
 console.log(totalGlobalVariabel);
 
-//Hvorfor vi ikke bruger var, det har noget med scope
+//Hvorfor vi ikke bruger var, det har noget med scope at gøre
 
 //regel use const whenver possible otherwise use let
 
 const someType = 123;
-someType = 456;  //const
-console.log(someType)
+//someType = 456;  //const
+//console.log(someType) //denne vil give TypeError: Assignment to constant variable
 
-const notConstArr = [1]; //const arrays kan ændres
-const notConstObject = {}; //
-
-
-
+const notConstArr = [1]; //const arrays kan få ændret indhold
+const notConstObject = {}; // const Object kan få ændret indhold
 
 function someFunc() {
     //function scope
@@ -26,5 +23,6 @@ function someFunc() {
 var someVar = true;
 {
     { var someVar = false;}
-    console.log(someVar)//Her er output false, da var er global
+    //console.log(someVar)//Her er output false, da var er global
 }
+
