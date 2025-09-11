@@ -71,4 +71,11 @@ app.get("/fashionbrands", (req, res) => {
     res.sendFile(__dirname + "/index.html");
 });
 
+//Task create a POST fashion brand and try sending 
+
+app.post("/fashionbrands", (req, res) => {
+    console.log(req.body);
+    res.send({data: req.body});
+});
+
 app.listen(8080); //hvorfor 8080 - er http developer port som standard
