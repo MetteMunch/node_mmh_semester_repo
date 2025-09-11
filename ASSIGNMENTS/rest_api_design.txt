@@ -1,0 +1,3 @@
+//HTTP Methods                    Endpoints
+GET                               /greekgods
+GET                               /greekgods/:id
