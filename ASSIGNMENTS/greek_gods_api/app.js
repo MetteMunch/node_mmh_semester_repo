@@ -13,7 +13,7 @@ const greekGods = [
 ];
 
 //API to get all greek gods
-app.get("/gods", (req, res) => {
+app.get("/greekgods", (req, res) => {
   res.send({
     data: greekGods
   }); 
@@ -21,17 +21,13 @@ app.get("/gods", (req, res) => {
 });
 
 //API to get an specific greek god
-app.get("/gods/:id", (req, res) => {
+app.get("/greekgods/:id", (req, res) => {
   const id = Number(req.params.id); //req.params vil alene altid returnere en String, derfor ændres..
   const god = greekGods.find((greekGod) => greekGod.id === id);
-  
-  //res.json(god);  //brug ikke .json
 
   if(!god) { //vi vil gerne håndtere fejlen først
     res.status(404).send({ errorMessage: `Greek god not found with id: ${id}`});
-
   } else {
-
     res.send({ data: `With id ${id} you find ${god.name} who is god for the ${god.domain}`});
   }
 });

@@ -1,3 +1,7 @@
-//HTTP Methods                    Endpoints
+HTTP Methods                      Endpoints
 GET                               /greekgods
 GET                               /greekgods/:id
+POST                              /greekgods
+PUT                               /greekgods/:id       erstatter hele ressourcen
+PATCH                             /greekgods/:id       ændrer kun den givne parameter
+DELETE                            /greekgods/:id
