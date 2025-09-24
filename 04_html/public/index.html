@@ -23,18 +23,16 @@
 
     <!--3. ekstern file med css -->
 
-    <script>
+    <p>Visitors count:</p>
+    <h2 id="visitors-counter"></h2>
 
+    <script>
         fetch("/visitorscount")
         .then((response) => response.json())
         .then((result) => {
-            const visitorscountH2 
-            console.log(result.data)
-        })
-
-        <!-- script tag med fetch-->
-
-
+            const visitorsCounterH2 = document.getElementById("visitors-counter");
+            visitorsCounterH2.innerText = result.data;
+        });
     </script>
     
 </body>
