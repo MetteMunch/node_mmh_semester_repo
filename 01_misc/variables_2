@@ -2,15 +2,11 @@
 
 //missing declaration
 totalGlobalVariabel = "Never do this";
-console.log(totalGlobalVariabel);
+//console.log(totalGlobalVariabel);
 
 //Hvorfor vi ikke bruger var, det har noget med scope at gøre
 
 //regel use const whenver possible otherwise use let
-
-const someType = 123;
-//someType = 456;  //const
-//console.log(someType) //denne vil give TypeError: Assignment to constant variable
 
 const notConstArr = [1]; //const arrays kan få ændret indhold
 const notConstObject = {}; // const Object kan få ændret indhold
@@ -20,9 +16,66 @@ function someFunc() {
 }
 
 //block scope
-var someVar = true;
-{
-    { var someVar = false;}
-    //console.log(someVar)//Her er output false, da var er global
+// var someVar = true;
+// {
+//     { var someVar = false;}
+//     console.log("Hvad er resultatet på block scope", someVar)//Her er output false, da var er global
+// }
+
+// const is constant in the assignment
+// we can change values of constant but we cannot reassign it
+const someType = 123;
+// someType = 456; //denne vil give TypeError: Assignment to constant variable
+
+const notConstantObject = {};
+notConstantObject.name = "Rune";
+
+const notConstantArray = [1];
+notConstantArray.push(2);
+// console.log(notConstantArray);
+
+// const constArrayWithObjects = [{name: "Mette", age: 51}, {name: "Rio", age: 20}];
+// console.log("array før ændring:", constArrayWithObjects);
+// function someFunction() {   
+//     constArrayWithObjects.push = {name: "Lasse", age: 17};
+//     console.log("array efter push:", constArrayWithObjects);
+// }
+// //someFunction();
+// console.log("værdien efter udenfor funktion:", constArrayWithObjects);
+
+const array = [1,2,3,4];
+console.log("array før push", array);
+function someFunctionNew() {
+    array.push(5);
+    console.log("array efter push", array);
 }
+
+someFunctionNew();
+
+const array2 = [1,2,3,4];
+console.log("array2 før push", array2);
+function newFunction() {
+    array2 = [5,6,7];
+    console.log("array+ efter", array2);
+}
+
+newFunction();
+
+
+
+
+
+
+{ // block scope
+    var someVariable = true;
+    //console.log("Hvad er værdien med var efter første instantiering?", someVariable);
+    
+    {
+        var someVariable = false;
+        //console.log("Hvad er værdien med var inde i inder scope?", someVariable);
+
+    }
+    //console.log("Hvad er resultatet i block scope med var?", someVariable);
+}
+
 

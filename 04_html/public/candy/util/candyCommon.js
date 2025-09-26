@@ -1,4 +1,4 @@
-const candy = require("./candy.json");  
+const candy = require("./candy.json");
 // kaldes commonJS
 
 module.exports = candy;

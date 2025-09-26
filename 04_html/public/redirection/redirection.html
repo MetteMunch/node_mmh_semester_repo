@@ -1,23 +1,22 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Redirection</title>
-</head>
-<body>
-
+  </head>
+  <body>
     <!-- 1. anchor tag -->
     <a href="/">Go to the frontpage</a>
-    
+
     <!-- task after 3 seconds redirect to the frontpage dynamically -->
 
     <script>
-        // 2. dynamic / programmatic
-        setTimeout(() => {
-            // window.location.href = "/";
-            window.location.replace("/");
-        }, 3000);
+      // 2. dynamic / programmatic
+      setTimeout(() => {
+        // window.location.href = "/";
+        window.location.replace("/");
+      }, 3000);
     </script>
-</body>
+  </body>
 </html>

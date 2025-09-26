@@ -1,44 +1,41 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Leg med fetch</title>
-</head>
-<body>
-
+  </head>
+  <body>
     <h1>Exercises from API-Ninjas</h1>
-    <ul id="exercises-list"></ul> 
+    <ul id="exercises-list"></ul>
 
     <script>
+      console.log("1: her starter fetch-kaldet");
 
-        console.log("1: her starter fetch-kaldet");
+      fetch("/exercises") //her startes en asynkron operation, dvs. koden stoppes ikke med at blive læst selvom der ikke er kommet svar fra server endnu
+        .then((response) => response.json()) //denne kører når svar er kommet retur fra server (app.js)
+        .then((exercises) => {
+          console.log("3: Nu er data modtaget og vi opdatere DOM'en");
 
-    fetch("/exercises")  //her startes en asynkron operation, dvs. koden stoppes ikke med at blive læst selvom der ikke er kommet svar fra server endnu
-    .then((response) => response.json()) //denne kører når svar er kommet retur fra server (app.js)
-    .then((exercises) => {
+          const exercisesList = document.getElementById("exercises-list");
 
-        console.log("3: Nu er data modtaget og vi opdatere DOM'en");
-
-        const exercisesList = document.getElementById("exercises-list");
-        
-        // Brug .map til at transformere arrayet af objekter til et array af HTML-strenge
-        const htmlStrings = exercises.map(exercise => {
+          // Brug .map til at transformere arrayet af objekter til et array af HTML-strenge
+          const htmlStrings = exercises.map((exercise) => {
             return `<li>Name: ${exercise.name} - Difficulty: ${exercise.difficulty}</li>`;
-        });
-        
-        // Brug .join('') til at samle alle strengene til én stor streng
-        // og indlæs den i <ul>-elementet på én gang
-        exercisesList.innerHTML = htmlStrings.join('');
-    })
-    .catch(error => {
-        console.error("Failed to fetch exercises:", error);
-        const exercisesList = document.getElementById("exercises-list");
-        exercisesList.innerText = "Failed to load data. Please try again later.";
-    });
+          });
 
-    console.log("2: koden fortsætter med at køre, mens vi venter på data");
-</script>
-    
-</body>
+          // Brug .join('') til at samle alle strengene til én stor streng
+          // og indlæs den i <ul>-elementet på én gang
+          exercisesList.innerHTML = htmlStrings.join("");
+        })
+        .catch((error) => {
+          console.error("Failed to fetch exercises:", error);
+          const exercisesList = document.getElementById("exercises-list");
+          exercisesList.innerText =
+            "Failed to load data. Please try again later.";
+        });
+
+      console.log("2: koden fortsætter med at køre, mens vi venter på data");
+    </script>
+  </body>
 </html>

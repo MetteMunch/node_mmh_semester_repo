@@ -1,22 +1,22 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href=".frontend/index.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href=".frontend/index.css" />
 
     <style>
-        /* h2 {
-            color: blue;
-        } */
+      /* h2 {
+          color: blue;
+      } */
 
-        .className
+      .className
     </style>
     <title>Snakes</title>
-</head>
-<body>
+  </head>
+  <body>
     <!--1. inline-css ikke så godt -->
-    <h1 style="color:aquamarine">Welcome to the world of snakessssss</h1>
+    <h1 style="color: aquamarine">Welcome to the world of snakessssss</h1>
 
     <!--2. internt i html filen med style tag -->
     <h2 class="className">Welcome to the world of snakessssss</h2>
@@ -27,14 +27,13 @@
     <h2 id="visitors-counter"></h2>
 
     <script>
-        fetch("/visitorscount")
+      fetch("/visitorscount")
         .then((response) => response.json())
         .then((result) => {
-            const visitorsCounterH2 = document.getElementById("visitors-counter");
-            visitorsCounterH2.innerText = result.data;
+          const visitorsCounterH2 = document.getElementById("visitors-counter");
+          visitorsCounterH2.innerText = result.data;
         });
     </script>
-     <script src=".frontend/index.js"></script> 
-    
-</body>
+    <script src=".frontend/index.js"></script>
+  </body>
 </html>
