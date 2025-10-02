@@ -25,6 +25,15 @@ app.get("/planets", (req, res) => {
   res.send({ name: "jupiter" });
 });
 
+app.get("/proxy", (req, res) => {  //ekstra bindeled
+
+  fetch("https://www.google.com/")
+  .then((response) => response.text())
+  .then((result) => res.send(result));
+
+});
+
+
 app.get("/planets/favoritePlanet", (req, res) => {
   res.send({ name: "venus" });
 });

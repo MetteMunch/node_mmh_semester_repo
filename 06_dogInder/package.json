@@ -4,6 +4,7 @@
   "description": "our own description",
   "main": "app.js",
   "scripts": {
+    "dev": "cross-env PORT=",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -16,5 +17,8 @@
   "license": "ISC",
   "dependencies": {
     "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "cross-env": "^10.1.0"
   }
 }
