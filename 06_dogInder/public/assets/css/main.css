@@ -1,0 +1,26 @@
+#logo {
+    height: 15vh;  /*tjek viewport en side er altid 100x100 vh*/
+}
+
+/*nav {
+    height: 15vh;
+}
+
+main {
+    min-height: calc(100vh - 36vh )
+
+}
+
+footer {
+    height: 5vh;
+}*/
+
+body {
+    min-height: 95vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
