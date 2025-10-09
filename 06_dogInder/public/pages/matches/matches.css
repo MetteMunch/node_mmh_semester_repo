@@ -1,4 +1,10 @@
-#dog-matches-image {
-    height: 30vh;
-    background-color: blue;
+#dog-matches-image-container {
+    display: flex;
+    justify-content: center;
 }
+
+#dog-matches-image {
+    height: 40vh;
+    
+}
+
