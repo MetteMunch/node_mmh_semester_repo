@@ -11,6 +11,9 @@ export const matchesPage = constructPage(matches, {
     cssLinks: `<link rel="stylesheet" href="/pages/matches/matches.css">`
 });
 
+const contact = readPage("./public/pages/contact/contact.html");
+export const contactPage = constructPage(contact, {});
+
 
 //fordel ved serverside rendering (ligesom Thymeleaf), mindre load time, noget med seo. Ressourcer bliver brugt ved opstart.
 //client side bliver ressourcer brugt af alle klienter

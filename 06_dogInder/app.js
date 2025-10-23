@@ -1,38 +1,20 @@
 import express from 'express';
 import path from 'path';
 
-console.log ("her indlæses app.js");
-
 const app = express();
 
 app.use(express.static("public"));
+console.log ("her indlæses app.js");
 
 
-// ========================= PAGES =====================================
+//de er eksporteret default og derfor kan jeg navngive dem her som jeg vil
+import matchesRouter from './routers/matchesRouter.js';
+app.use(matchesRouter);
+import pagesRouter from './routers/pagesRouter.js';
+app.use(pagesRouter);
+import contactRouter from './routers/contactRouter.js';
+app.use(contactRouter);
 
-import { frontpagePage, matchesPage } from './util/pagesUtil.js';
-
-app.get("/", (req, res) => {
-    res.send(frontpagePage);
-});
-
-app.get("/matches", (req, res) => {
-    res.send(matchesPage);
-});
-
-//fordel ved serverside rendering (ligesom Thymeleaf), mindre load time, noget med seo. Ressourcer bliver brugt ved opstart.
-//client side bliver ressourcer brugt af alle klienter
-
-
-
-// ========================= API =======================================
-
-import { getMatches } from './util/matchesUtil.js';
-
-app.get("/api/matches", async (req, res) =>  {
-    const matches = await getMatches();
-    res.send({ data: matches });
-});
 
 
 // falsy values
