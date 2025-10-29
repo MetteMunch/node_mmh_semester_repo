@@ -12,7 +12,9 @@ export const matchesPage = constructPage(matches, {
 });
 
 const contact = readPage("./public/pages/contact/contact.html");
-export const contactPage = constructPage(contact, {});
+export const contactPage = constructPage(contact, {
+    tabTitle: "DogInder | Contact"
+});
 
 
 //fordel ved serverside rendering (ligesom Thymeleaf), mindre load time, noget med seo. Ressourcer bliver brugt ved opstart.

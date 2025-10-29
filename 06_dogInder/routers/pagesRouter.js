@@ -11,7 +11,6 @@ router.get("/", (req, res) => {
     res.send(frontpagePage);
 });
 
-
 router.get("/matches", (req, res) => {
     res.send(matchesPage);
 });
