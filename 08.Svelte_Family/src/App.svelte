@@ -25,5 +25,5 @@
 <!---self closing tag-->
 <Home>
   <Parent parentName={parents[0]} children={children}/>
-  <Parent parentName={parents[1]} children={children}/>
+  <Parent parentName={parents[1]} children={children}/>  
 </Home> 
