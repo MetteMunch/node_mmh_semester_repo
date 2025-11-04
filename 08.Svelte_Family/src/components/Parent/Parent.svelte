@@ -1,5 +1,6 @@
 <script>
   import Child from "../Child/Child.svelte";
+  import { fridgeMessages } from "../../stores/fridgeStore.js";
 
 
     const { parentName, children } = $props();
@@ -26,26 +27,28 @@
             cookieJar = ["🍪", "🍪", "🍪", "🍪", "🍪"];
         }
     }
-
-    /* 
-    assignment: allow children to eat a cookie from the jar
-    bonus: if the jar is empty, let the parent fill it
- */
 </script>
 
 <h1>{ parentName}</h1>
 
+
 {#each loveHistory as love}
     <span>{love.name}: {love.love}</span>   
 {/each}
+<br/>
 
 <!-- Man kan kun sende data ned af i DOM fra parent til child gennem props -->
  <!-- Hvis der skal sendes op så skal der sendes en funktions ref  -->
   <!-- konvention: handle_ i komponenten og on_ props -->
-{#each cookieJar as love}
-    <span>{love.name}: {love.love}</span>   
+{#each cookieJar as cookie}
+    <span>{cookie}</span>   
 {/each}
+<br/>
 
+<button onclick={fridgeMessages.wipe}>Wipe fridge</button>
+<br/>
+<br/>
+<br/>
 
 {#each children as child (child.name)}
     <Child {...child} onShowLove={handleShowLove} onEatCookie={handleEatCookie}/>

@@ -22,7 +22,7 @@
 
 </script>
 
-<!---self closing tag-->
+<!---Nedenstående vises i slot sektionen i home-->
 <Home>
   <Parent parentName={parents[0]} children={children}/>
   <Parent parentName={parents[1]} children={children}/>  

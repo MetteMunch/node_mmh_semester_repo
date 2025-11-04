@@ -1,4 +1,4 @@
-import { writable } from "svelte/store";  //der findes to typer stores readable
+import { writable } from "svelte/store";  //der findes to typer stores readable og writable
 
 function fridgeMessagesCustomStore() {
     const { subscribe, update, set } = writable(["Write a fridge message"]);
@@ -7,11 +7,11 @@ function fridgeMessagesCustomStore() {
         subscribe,
         update,
         set,
-        wipe: () => (["write a fetch"])
+        wipe: () => set(["Write a fridge message"])
     }
 }
 
-export const fridgeMessages = writable(["write a message"]);
+export const fridgeMessages = fridgeMessagesCustomStore();
 
 // store har set, subscribe og update hvis der er writeable, men readable har kun subscribe
 
